@@ -52,7 +52,7 @@ app.use(cookieParser())
 //Data sanitization against NoSql query injection
 app.use(mongoSanitize());
 //Data sanitization against XSS
-app.use(xss());
+
 //Test middleware
 app.use((req, res, next) => {
   req.requestTime = new Date().toISOString();
