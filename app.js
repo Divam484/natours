@@ -15,7 +15,7 @@ const AppError = require("./utils/appError");
 const globalErrorHandler = require("./controllers/errorController");
 const viewRouter = require('./routes/viewRoutes')
 const cookieParser = require('cookie-parser')
-
+const compression = require('compression')
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
 
@@ -59,13 +59,14 @@ app.use((req, res, next) => {
   // console.log(req.cookies);
   next();
 });
-
+app.use(compression())
 //3 Routes
 app.use("/", viewRouter);
 app.use("/api/v1/tours", tourRouter);
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/reviews", reviewRouter);
 app.use("/api/v1/bookings", bookingRouter);
+
 
 
 app.all("*", (req, res, next) => {

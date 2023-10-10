@@ -2,7 +2,7 @@ import axios from "axios";
 import { showAlert } from './alerts';
 
 export const signUp = async (name,email,password,passwordConfirm) => {
-  // console.log(email, password);
+  
   try {
     const res = await axios({
       method: "POST",
@@ -14,7 +14,7 @@ export const signUp = async (name,email,password,passwordConfirm) => {
         passwordConfirm
       },
     });
-    console.log(res)
+   
     if (res.data.status === 'success') {
         showAlert('success', 'Sign-Up in successfully!');
         window.setTimeout(() => {
