@@ -1,6 +1,7 @@
 [build]
   command = "npm run build" 
-  publish = "views"           
+  publish = "views"
+  memory = 6144           
 
 [dev]
   command = "npm run start"  
