@@ -2,4 +2,4 @@
   command = "npm run build"
   publish = "build"
 [deploy]
-  directory = "build"
+  directory = "public"
